@@ -1,22 +1,19 @@
 using System;
 
-namespace Fabryka_batonow
+namespace Jubiler_i_zlodziej
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Maszyna_Bat w = new Maszyna_Bat();
-            while (true)
-            {
-               
-               
-                w.DoMaintanceTests();
-                System.Threading.Thread.Sleep(2000);
-                Console.Clear();
-            }
-          //  Console.Read();
-            
+            Jubiler content = new Jubiler();
+            Wlasciciel wlasciciel = new Wlasciciel();
+            Sejf sejf = new Sejf();
+            Zlodziej zlodziej = new Zlodziej();
+            Ślusarz ślusarz = new Ślusarz();
+            zlodziej.OpenSafe(sejf, wlasciciel);
+            ślusarz.zwrocZawartosc(content,wlasciciel);
+            Console.ReadLine();
         }
     }
 }
